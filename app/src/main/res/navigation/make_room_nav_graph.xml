@@ -22,5 +22,14 @@
         tools:layout="@layout/fragment_waiting_room_make">
     <!--새롭게 action 추가하면 됨-->
     </fragment>
+<!--    <activity-->
+<!--        android:id="@+id/MakerCallActivity"-->
+<!--        android:name="com.example.cammate.presentation.viewer.MakerCallActivity"-->
+<!--        android:label="activity_maker"-->
+<!--        tools:layout="@layout/activity_maker_call">-->
+<!--        <action-->
+<!--            android:id="@+id/action_FinderCallActivity_to_MakeRoomFragment"-->
+<!--            app:destination="@id/MakeRoomFragment" />-->
+<!--    </activity>-->
 
 </navigation>

@@ -22,7 +22,7 @@ class SocketRepository (private val messageInterface: NewMessageInterface) {
         //but if your websocket is deployed you add your websocket address here
         //ws://13.125.228.93:3000
         webSocket = object : WebSocketClient(URI("ws://10.0.2.2:3000")) {
-            //        webSocket = object : WebSocketClient(URI("ws://192.168.1.3:3000")) {
+            //        webSocket = object : WebSocketClient(URI("ws://13.125.228.93:3000")) {
             override fun onOpen(handshakedata: ServerHandshake?) {
                 sendMessageToSocket(
                     MessageModel(

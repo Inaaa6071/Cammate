@@ -12,6 +12,8 @@
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- 사진 저장 권한 -->
     <uses-permission
         android:name="android.permission.LOCAL_MAC_ADDRESS"
         tools:ignore="ProtectedPermissions" /> <!-- Android 11 버전까지를 위한 블루투스 권한 -->
@@ -39,6 +41,18 @@
         android:theme="@style/Theme.Cammate"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
+        <provider
+            android:authorities="com.cammate.provider"
+            android:name="androidx.core.content.FileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_path"/>
+        </provider>
+        <activity
+            android:name=".presentation.viewer.CameraActivity"
+            android:exported="false" />
         <activity
             android:name=".presentation.viewer.FinderCallActivity"
             android:exported="false" />

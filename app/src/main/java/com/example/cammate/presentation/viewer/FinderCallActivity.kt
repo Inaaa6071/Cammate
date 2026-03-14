@@ -1,13 +1,16 @@
 package com.example.cammate.presentation.viewer
 
+import android.Manifest
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.cammate.MainActivity
 import com.example.cammate.R
 import com.example.cammate.databinding.ActivityFinderCallBinding
 import com.example.cammate.databinding.ActivityMakerCallBinding
@@ -18,6 +21,7 @@ import com.example.cammate.webRTC.SocketRepository
 import com.example.cammate.webRTC.utils.NewMessageInterface
 import com.example.cammate.webRTC.utils.PeerConnectionObserver
 import com.google.gson.Gson
+import com.permissionx.guolindev.PermissionX
 import org.webrtc.IceCandidate
 import org.webrtc.MediaStream
 import org.webrtc.SessionDescription
@@ -39,6 +43,13 @@ class FinderCallActivity : AppCompatActivity(), NewMessageInterface {
         userName += "01"
         roomName = intent.getStringExtra("TargetName")
         roomName += "01"
+
+        binding.btnEndCall.setOnClickListener {
+            // call activity
+            //rtcClient?.endCall()
+            val intent = Intent(this, CameraActivity::class.java)
+            startActivity(intent)
+        }
         init()
 
     }
@@ -79,6 +90,14 @@ class FinderCallActivity : AppCompatActivity(), NewMessageInterface {
             "start_call",userName,roomName,null
         )
         )*/
+
+        binding.btnChatting.setOnClickListener {
+                    // 채팅 기능
+        }
+        binding.btnCamera.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun onNewMessage(message: MessageModel) {
