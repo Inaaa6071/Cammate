@@ -28,12 +28,11 @@ Cammate는 이 문제를 실시간 화면 공유로 해결합니다.
 🏗 아키텍처
 Client 1 (촬영자)
   1. 방 생성 → DB 저장 및 WebSocket Room 생성
-  6. 'enter-room' 이벤트 수신 → 수락 여부 창 표시
-  7. 수락 시 'accept' 이벤트 전송
+  2. 'enter-room' 이벤트 수신 → 수락 여부 창 표시
+  3. 수락 시 'accept' 이벤트 전송
 
 Client 2 (피사체)
   2. Bluetooth로 주변 방 탐색
-  4. 방 리스트에서 입장할 방 클릭
-  5. 'enter-room' 이벤트 전송
-  9. 'accept' 이벤트 수신 후 ICE Candidate 과정 시작
-
+  3. 방 리스트에서 입장할 방 클릭
+  4. 'enter-room' 이벤트 전송
+  5. 'accept' 이벤트 수신 후 ICE Candidate 과정 시작
